@@ -11,7 +11,7 @@ const colorButton = document.getElementById("btn-change-color");
 const colorBox = document.getElementById("color-box");
 
 colorButton.addEventListener("click", () => {
-  const colors = ["#FF5733", "#33FF57", "#3357FF", "#F3FF33"];
+  const colors = ["#F1D4E5", "#33FF57", "#3357FF", "#F3FF33"];
   const randomColor = colors[Math.floor(Math.random() * colors.length)];
   colorBox.style.backgroundColor = randomColor;
 });
@@ -71,8 +71,8 @@ canvasSection.style.justifyContent = "center";
 document.querySelector("main").appendChild(canvasSection);
 
 const canvas = document.createElement("canvas");
-canvas.setAttribute("width", "700");
-canvas.setAttribute("height", "500");
+// canvas.setAttribute("width", "700");
+// canvas.setAttribute("height", "500");
 canvas.style.border = "1px black solid";
 canvasSection.appendChild(canvas);
 
