@@ -11,28 +11,33 @@
             <h1>Spanish Cards Game</h1>
         </header>
         <main>
-            <form id="feedback-form">
-                <h2>Enter Your Name</h2>
-                <input type="text" id="nameInput" placeholder="Please type your name"/>
-                <button type="submit" id="showNameButton">Submit</button>
-            </form>
-            <div id="displayName" style="color: rgb(60, 1, 1); font-size: 30px;"></div>
+            <section id="message" class="content-section">
+                <form id="user-form">
+                    <h2>Enter Your Name</h2>
+                    <input type="text" id="nameInput" placeholder="Please type your name"/>
+                    <button type="submit" id="showNameButton">Submit</button>
+                </form>
+                <div id="displayName" style="color: rgb(60, 1, 1); font-size: 30px;"></div>
+            </section>
 
             <section id="message" class="content-section">
-                <div id="form-response"></div>
-                <h2>Please select the topic you would like to practice</h2>
-                
-                    <select name="topics" id="topics">
-                        <option value="numeros">Numeros</option>
-                        <option value="animales">Animales</option>
+                <!-- <div id="form-response"></div> -->                
+                <form id="categoryForm">
+                    <label for="categorySelect">Choose category:</label>
+                    <select id="categorySelect" name="category" required>
+                        <option value="">--Select--</option>
+                        <option value="animals">Animals</option>
+                        <option value="foods">Foods</option>
+                        <option value="numbers">Numbers</option>
                         <option value="moods">Moods</option>
-                        <option value="fruits">Fruits</option>
                     </select>
+                    <button type="submit">Start</button>
+                </form>
             </section>
 
 
             <section id="cards" class="content-section">
-
+                <div id="card">?</div>
             </section>
         </main>
 
