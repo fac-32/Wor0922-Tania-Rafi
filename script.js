@@ -88,3 +88,20 @@ card.addEventListener("click", () => {
   scheduleNextCard();
 });
 
+
+const userName = document.getElementById("user-form");
+const formResponse = document.getElementById("displayName");
+
+userName.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const name = document.getElementById("nameInput").value.toUpperCase();
+  formResponse.textContent = `Hello ${name}, Let's practice some Spanish`;
+  // form.reset();
+
+  if (userName.style.display === "none"){
+    userName.style.direction = "block";
+  } else {
+    userName.style.display = "none";
+  }
+}); 
+
