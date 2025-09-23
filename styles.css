@@ -5,10 +5,8 @@
     --button-color: #73BBC9;
     --button-hover: #14889f;
     --border-radius: 16px;
-
-    
-    /* --section-color: #F1D4E5; */
-}
+    --section-color: #F1D4E5;
+} 
 
 body {
     margin: 0 clamp(1rem, 4vw, 4rem);
@@ -18,44 +16,23 @@ body {
     line-height: 1.6rem;
 }
 
-header {
-    padding: 1rem;
+h1 {
+    font-size: 5rem;
     text-align: center;
+    padding: 5rem;
 }
 
-nav {
-    list-style: none;
-    padding: 0;
+form {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-a {
-    text-decoration: none;
-    
-    font-weight: bold;
-}
-
-a:link {
-    color: var(--button-color);
-}
-
-a:visited {
-    color: var(--button-hover)
-}
-
-.content-section {
+label {
+    font-size: 1.5rem;
     padding: 2rem;
-    margin: 1rem auto;
-    max-width: 800px;
-    background-color: white;
-    border-radius: var(--border-radius);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#color-box {
-    border-radius: var(--border-radius);
 }
 
 button {
@@ -67,6 +44,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s;
     font-weight: bold;
+    width: 300px;
 }
 
 button:hover {
@@ -74,22 +52,13 @@ button:hover {
     color: white;
 }
 
-.hidden-info {
-    display: none;
-    margin-top: 1rem;
+select {
+    width: 300px;
+    font-size: 1rem;
     padding: 1rem;
-    border: 1px solid green;
+    cursor: pointer;
 }
 
-#color-box {
-    width: 100%;
-    height: 100px;
-    background-color: lightgray;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1rem;
-}
 
 form {
     display: flex;
@@ -98,15 +67,27 @@ form {
     gap: 0.5rem;
 }
 
-input,
-textarea {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    width: 100%;
-}
-
 footer {
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
 }
+
+
+#card {
+    font-size: 100px;
+    margin: 20px auto;
+    cursor: pointer;
+    user-select: none;
+    border: 2px solid #333;
+    border-radius: 12px;
+    max-width: 200px;
+    padding: 30px;
+    transition: background-color 0.3s ease;
+}
+#card.revealed {
+    background-color: #e0f0ff;
+    color: #2a7ae2;
+    font-size: 48px;
+}
+
