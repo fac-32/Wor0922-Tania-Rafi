@@ -10,15 +10,17 @@ const card = document.getElementById("card");
 
 
 userName.addEventListener("submit", (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     const name = document.getElementById("nameInput").value.toUpperCase();
+
     formResponse.textContent = `Hello ${name}, Let's practice some Spanish`;
 
     if (userName.style.display != "none"){
         userName.style.display = "none";
     };
-    userChoice.style.display = 'flex';
-    cardSec.style.display = 'flex';
+
+    // userChoice.style.display = 'flex';
+    // cardSec.style.display = 'flex';
 
 }); 
 
@@ -104,5 +106,22 @@ card.addEventListener("click", () => {
   showTranslation();
   scheduleNextCard();
 });
+
+const userFeedback = document.getElementById("feedback");
+const thankYouSection = document.getElementById("thank-you");
+const formFeedback = document.getElementById("form-feedback");
+
+formFeedback.addEventListener("submit", (event) => {
+  event.preventDefault();
+  // hide the form
+
+  userFeedback.style.display = "none";
+
+  // show thank-you message
+
+  thankYouSection.style.display = "block";
+
+});
+
 
 });

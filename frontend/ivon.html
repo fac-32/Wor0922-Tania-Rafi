@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <h1>Feedback</h1>
+    <section id="feedback">
+        <h3 style="text-align: center;">Please tell us how was your experience. Your feedback cann hep us improving our game</h3>
+        <form action="/exit" id="form-feedback">
+            <label>
+                Did the game helped you to improve your Spanish vocabulary?
+            </label>
+            <div class="radio-group">
+                <input type="radio" id="yes" name="satisfy" value="yes" checked>
+                <label for="yes">Yes</label>
+
+                <input type="radio" id="no" name="satisfy" value="no">
+                <label for="no">No</label>
+            </div>
+            <label for="msg">
+                <i class="fa-solid fa-comments" style="margin-right: 3px;"></i>
+                Could you give us some suggestions, please:
+            </label>
+            <textarea id="msg" name="msg" rows="6" cols="100" required></textarea>
+            <button type="submit" id = "btn-feedback" name="input-feedback">Submit</button>
+        </form>
+    </section>
+    <section id="thank-you">
+        <h3 style="text-align: center;">Your feedback has been submitted. Thank you!</h3>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

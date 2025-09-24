@@ -10,18 +10,19 @@
     <div id="wrapper-container">
         <header id="header">
             <h1>Spanish Cards Game</h1>
+
         </header>
         <main id="main">
             <section id="message" class="content-section">
-                <form id="user-form">
+                <form action="/start" id="user-form">
                     <h2>Enter Your Name</h2>
-                    <input type="text" id="nameInput" placeholder="Please type your name"/>
+                    <input type="text" id="nameInput" placeholder="Please type your name" name="userName"/>
                     <button type="submit" id="showNameButton">Submit</button>
                 </form>
                 <div id="displayName"></div>
             </section>
 
-            <section id="user-choice" class="content-section">             
+            <!-- <section id="user-choice" class="content-section">             
                 <form id="categoryForm">
                     <label for="categorySelect">Choose category:</label>
                     <select id="categorySelect" name="category" required>
@@ -37,7 +38,8 @@
 
             <section id="flashcard" class="content-section">
                 <div id="card">?</div>
-            </section>
+            </section> -->
+        
         </main>
         <footer>
             <p>Copyrights by Trish and Ivon</p>
