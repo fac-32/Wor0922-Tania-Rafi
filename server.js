@@ -1,6 +1,7 @@
 
 const express = require('express');
 const path = require('node:path');
+const { setTimeout } = require('node:timers');
 const app = express();
 
 const port = 8000;
@@ -19,19 +20,26 @@ function validateName(req, res, next) {
     next();
 }
 
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(staticPath, 'index.html'));
-});
-
 app.get('/start', validateName, (req, res) => {
     const name =req.query.userNameme;
     res.sendFile(path.join(staticPath, 'thrishala.html'));
 });
 
+app.get('/userCategory', (req,res) => {
+    res.sendFile(path.join(staticPath, 'thrishala.html'));
+});
+
+app.get('/feedback', (req, res) => {
+    res.sendFile(path.join(staticPath, "ivon.html"));
+});
+
 app.get('/exit', (req,res) => {
     res.sendFile(path.join(staticPath, "ivon.html"))
 })
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(staticPath, 'index.html'));
+});
 
 app.get("/:universalURL", (req, res) => {
     res.send("404 URL NOT FOUND");
