@@ -129,3 +129,11 @@ footer {
     font-size: 3rem;
 }
 
+#feedback {
+    display: flex;
+    flex-direction: column;
+}
+
+#thank-you {
+    display:none;
+}

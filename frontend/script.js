@@ -107,4 +107,21 @@ card.addEventListener("click", () => {
   scheduleNextCard();
 });
 
+const userFeedback = document.getElementById("feedback");
+const thankYouSection = document.getElementById("thank-you");
+const formFeedback = document.getElementById("form-feedback");
+
+formFeedback.addEventListener("submit", (event) => {
+  event.preventDefault();
+  // hide the form
+
+  userFeedback.style.display = "none";
+
+  // show thank-you message
+
+  thankYouSection.style.display = "block";
+
+});
+
+
 });

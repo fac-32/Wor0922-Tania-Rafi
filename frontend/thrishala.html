@@ -14,7 +14,7 @@
         </header>
         <main id="main">
             <section id="user-choice" class="content-section">             
-                <form id="categoryForm">
+                <form action='/userCategory' id="categoryForm">
                     <label for="categorySelect">Choose category:</label>
                     <select id="categorySelect" name="category" required>
                         <option value="">--Select--</option>
@@ -29,7 +29,7 @@
 
             <section id="flashcard" class="content-section">
                 <div id="card">?</div>
-                <button type="onClick">Exit the Game</button>
+                <button id= "exit-button" onclick="location.href ='/frontend/ivon.html'">Exit the Game</button>
             </section>
         </main>
         <footer>

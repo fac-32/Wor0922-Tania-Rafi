@@ -2,6 +2,7 @@
 const express = require('express');
 const path = require('node:path');
 const app = express();
+
 const port = 8000;
 const staticPath = path.join(__dirname, 'frontend')
 
@@ -19,13 +20,18 @@ function validateName(req, res, next) {
 }
 
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(staticPath, 'index.html'));
+});
+
 app.get('/start', validateName, (req, res) => {
+    const name =req.query.userNameme;
     res.sendFile(path.join(staticPath, 'thrishala.html'));
 });
 
-app.get('/', (req, res) => {
-    res.redirect('/start');
-});
+app.get('/exit', (req,res) => {
+    res.sendFile(path.join(staticPath, "ivon.html"))
+})
 
 app.get("/:universalURL", (req, res) => {
     res.send("404 URL NOT FOUND");
