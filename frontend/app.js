@@ -50,13 +50,13 @@ function scheduleReveal() {
   revealTimeout = setTimeout(() => {
     showTranslation();
     scheduleNextCard();
-  }, 2000);
+  }, 3000);
 }
 
 function scheduleNextCard() {
   nextCardTimeout = setTimeout(() => {
     showNextCard();
-  }, 1000);
+  }, 10000);
 }
 
 function clearTimers() {
@@ -93,3 +93,35 @@ exitButton.addEventListener("click", () => {
 })
 
 });
+
+// ---- RHYMES INTEGRATION ---- with DataMuse // This is a strictly read-only service and an API token is NOT required. The service supports both HTTP and HTTPS requests.
+
+const card = document.getElementById("card");
+const rhymeEl = document.getElementById("rhyme");
+
+const observer = new MutationObserver(() => { //watches for changes in the DOM
+  
+  const word = card.textContent; //get the word on the card
+  rhymeEl.textContent = "Loading rhymes...";
+
+  // Fetch rhymes from Datamuse API
+  fetch(`https://api.datamuse.com/words?rel_rhy=${encodeURIComponent(word)}&v=es`) //fetch(url) → makes an HTTP request and returns a Promise.
+  //  fetch(`https://api.datamuse.com/words?sl=${encodeURIComponent(word)}&v=es`) // words that sound similar
+
+    .then(res => res.json()) // the promise retun a response that we parse to json and then into JS
+
+    .then(data => { //data → the JavaScript array/object returned by .json().
+      if (data.length > 0) {
+        rhymeEl.textContent = "Rhymes: " + data.slice(0, 5).map(w => w.word).join(", ");
+      } else {
+        rhymeEl.textContent = "No rhymes found.";
+      }
+    })
+    .catch(err => {
+      console.error("Rhyme API error:", err);
+      rhymeEl.textContent = "Error loading rhymes.";
+    });
+});
+
+observer.observe(card, { childList: true, characterData: true, subtree: true });
+

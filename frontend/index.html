@@ -13,13 +13,21 @@
 
         </header>
         <main id="main">
+            <h2>Quote of the day</h2>
+            <p id="quote"></p>
             <section id="message" class="content-section">
                 <form action="/start" id="user-form">
                     <h2>Enter Your Name</h2>
                     <input type="text" id="nameInput" placeholder="Please type your name" name="userName"/>
                     <button type="submit" id="showNameButton">Submit</button>
                 </form>
-            </section>        
+            </section>  
+
+            <section id="cat-api">
+                <button id="catBtn">Get a new cat!</button>
+                <img id="catImg" alt="Random Cat" width="400">
+            </section> 
+            
         </main>
         <footer>
             <p>Copyrights by Trish and Ivon</p>
