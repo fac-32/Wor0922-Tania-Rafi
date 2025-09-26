@@ -3,11 +3,14 @@ const express = require('express');
 const path = require('node:path');
 const { setTimeout } = require('node:timers');
 const app = express();
+const {Translate} = require('@google-cloud/translate').v2;
+const translate = new Translate();
+
 
 const port = 8000;
 const staticPath = path.join(__dirname, 'frontend')
 
-
+app.use(express.json()); 
 
 app.use(express.static(staticPath));
 
@@ -21,7 +24,6 @@ function validateName(req, res, next) {
 }
 
 app.get('/start', validateName, (req, res) => {
-    const name =req.query.userNameme;
     res.sendFile(path.join(staticPath, 'thrishala.html'));
 });
 
@@ -34,7 +36,18 @@ app.get('/feedback', (req, res) => {
 });
 
 app.get('/exit', (req,res) => {
-    res.sendFile(path.join(staticPath, "ivon.html"))
+    res.sendFile(path.join(staticPath, "ivon.html"));
+})
+
+app.post('/translate', async(req, res) => {
+    const { text, target } = req.body;
+    let [translations] = await translate.translate(text, target);
+    translations = Array.isArray(translations) ? translations : [translations];
+    res.send(translations[0]);
+})
+
+app.get('/sentenceTranslation', (req, res) => {
+    res.sendFile(path.join(staticPath, "sentence.html"));
 })
 
 app.get('/', (req, res) => {

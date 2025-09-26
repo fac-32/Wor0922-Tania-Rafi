@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <h1>Sentence Translation</h1>
+    <main id="translation-main">
+        <div class="side-container">
+            <div class="language">
+                <span class="english">English</span>
+                <svg class="down-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M7 10l5 5 5-5z"></path>
+                </svg>
+            </div>
+            <div class=text-area>
+                <textarea id="user-input" placeholder="Enter your text here"></textarea>
+                <button id="tl-btn" type="onclick">Translate</button>
+            </div> 
+        </div>
+        
+        <div class="side-container">
+            <div class="language">
+                <span class="spanish">Spanish</span>
+                <svg class="down-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M7 10l5 5 5-5z"></path>
+                </svg>
+            </div>
+            <div class=text-area-spanish>
+                <span id="translated-text">Translation</span>
+            </div> 
+        </div>
+    </main>
+    <script src="trans.js"></script>
+</body>
+</html>
