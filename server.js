@@ -4,7 +4,9 @@ const path = require('node:path');
 const { setTimeout } = require('node:timers');
 const app = express();
 const {Translate} = require('@google-cloud/translate').v2;
-const translate = new Translate();
+const translate = new Translate({
+    keyFilename: '/Users/Thrishala/Downloads/Day4 Fac32/Wor0922-Tania-Rafi/keys/core-sprite-268808-b535e2df1210.json'
+});
 
 
 const port = 8000;
